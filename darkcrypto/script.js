@@ -11,7 +11,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Check credentials
     if (inputUsername === username && inputPassword === password) {
-        window.location.href = 'https://www.google.com'; // Redirect on success
+        window.location.href = 'https://franzbonaparta76.github.io/darkcrypto/dc/'; // Redirect on success
     } else {
         alert('Invalid credentials. Please try again.'); // Alert on failure
     }
