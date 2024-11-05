@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Insta</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #6200ea;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3700b3;
+        }
+    </style>
+    <script>
+        function encryptGameName(gameName) {
+            return btoa(gameName); // Simple Base64 encoding for demo
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const gameName = document.getElementById('gameName').value;
+            const encryptedGameName = encryptGameName(gameName);
+
+            alert(`TOKEN: ${encryptedGameName}`);
+            // Here we just display the encrypted name; replace or store as needed
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <form name="gameForm" onsubmit="handleSubmit(event)">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="gameName">Password:</label>
+            <input type="text" id="gameName" name="gameName" required>
+            <input type="submit" value="GENERATE TOKEN">
+        </form>
+    </div>
+</body>
+</html>
